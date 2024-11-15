@@ -1,0 +1,200 @@
+1. <!DOCTYPE html>
+<html lang="en">
+bbsbe
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="outputGrade"></p>
+    <script>
+        let grade = Number(prompt("Jaką ocenę chciałbyś otrzymać? "))
+        switch (grade) {
+            case 6:
+                document.getElementById("outputGrade").innerHTML = `Perfekcja jest konieczna`;
+                break;
+            case 5:
+                document.getElementById("outputGrade").innerHTML = `Musisz mieć  przynajmniej  90% punktów`;
+                break;
+            case 4:
+                document.getElementById("outputGrade").innerHTML = `Musisz mieć przynajmniej 75% ale mniej niż  90% punktów`;
+                break;
+            case 3:
+                document.getElementById("outputGrade").innerHTML = `Musisz mieć przynajmniej 55% ale mniej niż  75% punktów`;
+                break;
+            case 2:
+                document.getElementById("outputGrade").innerHTML = `Wystarczy, że dostaniesz 40% punktów`;
+                break;
+            case 1:
+                document.getElementById("outputGrade").innerHTML = `Możesz odpoczywać`;
+                break;
+
+            default:
+                break;
+        }
+    </script>
+</body>
+
+</html>
+2. <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>*</th>
+            <script>
+                let rows = prompt("podaj wiersze")
+                let cols = prompt("podaj kolumny")
+                for (let i = 1; i <= cols; i++) {
+                    document.write("<th>" + i + "</th>")
+                }
+            </script>
+        </tr>
+
+        <script>
+            for (let i = 1; i <= rows; i++) {
+                document.write("<tr><th>" + i + "</th>")
+
+                for (let j = 1; j <= cols; j++) {
+                    let r = i * j;
+                    document.write("<td>" + r + "</td>")
+                }
+                document.write("</tr>")
+            }
+        </script>
+    </table>
+</body>
+
+</html>
+3. <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <script>
+        let numbers = Number(prompt("Podaj liczbę cyfer do zsumowania"))
+        sum = 0;
+        for (let i = 0; i < numbers; i++) {
+            let nums = Number(prompt("Podaj cyfrę " + [i + 1]))
+            sum += nums;
+        }
+        document.getElementById("out").innerHTML = `Suma twoich liczb wynosi: ${sum}`;
+    </script>
+</body>
+
+</html>
+4. <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <script>
+        const loadNumbers = () => {
+            const a = Number(prompt("Podaj pierwszą liczbę"));
+            const b = Number(prompt("Podaj drugą liczbę"))
+            return [a, b];
+        };
+        const min = (a, b) => {
+            return a < b ? a : b
+        }
+        const avg = (a, b) => {
+            return (a + b) / 2;
+        }
+        const max = (a, b) => {
+            return a > b ? a : b;
+        }
+        const calc = () => {
+            const [a, b] = loadNumbers();
+            document.getElementById("out").innerHTML = `Najmniejsza z  liczb ${a} i ${b} wynosi ${min(a, b)}, największa ${max(a, b)}  a ich średnia to ${avg(a, b)}.`;
+        }
+        calc();
+    </script>
+</body>
+
+</html>
+5. <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="output">
+        <thead>
+            <tr id="headerRow"></tr>
+        </thead>
+        <tbody id="dataRow"></tbody>
+    </table>
+    <script>
+        let question = ["imię", "nazwisko", "wiek", "wzrost", "datę urodzenia", "klasę"];
+        let data = ["imię", "nazwisko", "wiek", "wzrost", "data urodzenia", "klasa"];
+        let pinfo = [];
+        let datarow = "<tr>";
+
+        for (let i = 0; i < question.length; i++) {
+            let info = prompt(`Podaj swoje ${question[i]}`);
+            pinfo.push(info);
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            document.getElementById("headerRow").innerHTML += "<th>" + data[i] + "</th>";
+        }
+        for (let i = 0; i < pinfo.length; i++) {
+            datarow += "<td>" + pinfo[i] + "</td>";
+        }
+        datarow += "</tr>"
+
+        document.getElementById('dataRow').innerHTML = datarow;
+
+
+    </script>
+</body>
+
+</html>
