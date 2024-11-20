@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 2px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="out">
+    </table>
+    <script>
+        const string = "Nowy Rok"
+        for (const i in string) {
+            document.getElementById('out').innerHTML += `<td>${string[i]}</td>`;
+        }
+    </script>
+</body>
+
+</html>
