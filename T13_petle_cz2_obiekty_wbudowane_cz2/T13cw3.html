@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol id="list"> </ol>
+    <ol id="list1"> </ol>
+    <script>
+        const bands = ["Metallica", "Pink Floyd", "Queen", "AC/DC"];
+
+        for (let i = 0; i < bands.length; i++) {
+            document.getElementById('list').innerHTML += `<li>${bands[i]}</li>`;
+        }
+
+        bands.forEach(element => {
+            document.getElementById('list1').innerHTML += `<li>${element}</li>`;
+        });
+    </script>
+</body>
+
+</html>
