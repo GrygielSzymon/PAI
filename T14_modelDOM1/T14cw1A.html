@@ -4,14 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body {
+            background-color: hwb(216 7% 50%);
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-
-    </script>
+    <h2>Nagłówek class1</h2>
+    <h3>Nagłówek class2</h3>
+    <p id="out1">Akapit class1</p>
+    <p>Akapit class2</p>
+    <p class="out2">Akapit</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="out3">3</li>
+        <li class="out3">4</li>
+    </ul>
+    <p><button onclick="myFunction()">kolor tła akapitu</button></p>
+    <p><button onclick="myFunction2()">kolor tła i tekstu akapitu</button></p>
+    <p><button onclick="myFunction3()">lista z class2</button></p>
 </body>
+<script>
+    function myFunction() {
+        document.getElementById('out1').style.backgroundColor = "blue";
+    }
+
+    function myFunction2() {
+        let akptxt = document.getElementsByClassName('out2');
+
+        for (let i = 0; i < akptxt.length; i++) {
+            akptxt[i].style.backgroundColor = "gray";
+            akptxt[i].innerHTML = "<b>Świetnie!!!</b>";
+        }
+    }
+
+
+    function myFunction3() {
+        let akptxt = document.getElementsByClassName('out3');
+        for (let i = 0; i < akptxt.length; i++) {
+            akptxt[i].style.backgroundColor = 'magenta';
+        }
+    }
+</script>
 
 </html>
