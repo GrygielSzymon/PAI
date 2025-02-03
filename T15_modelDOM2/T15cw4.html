@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ciemno</h1>
+    <button onclick="clk()">Włącz światło</button>
+    <img src="e1.jpg" height="400px" width="400px">
+    <script>
+        let isLightOn = false;
+
+        function clk() {
+            const img1 = document.querySelector("img");
+            const b = document.querySelector("button");
+            const h = document.querySelector("h1");
+
+            if (isLightOn) {
+                img1.src = "e1.jpg";
+                b.textContent = "Włącz światło";
+                h.textContent = "Ciemno";
+                document.body.style.backgroundColor = "gray";
+            } else {
+                img1.src = "e3.jpg";
+                b.textContent = "Wyłącz światło";
+                h.textContent = "Stała się jasność";
+                document.body.style.backgroundColor = "white";
+            }
+
+            isLightOn = !isLightOn;
+        }
+    </script>
+</body>
+
+</html>
