@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .highlight {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+
+    <button onclick="toggleEven()">Toggle Even Formatting</button>
+    <button onclick="toggleOdd()">Toggle Odd Formatting</button>
+    <button onclick="toggleFirstThree()">Toggle First Three Formatting</button>
+    <button onclick="toggleLast()">Toggle Last Paragraph</button>
+
+    <script>
+        function toggleEven() {
+            document.querySelectorAll('.even').forEach(p => {
+                p.classList.toggle('highlight');
+            });
+        }
+
+        function toggleOdd() {
+            document.querySelectorAll('.odd').forEach(p => {
+                p.classList.toggle('highlight');
+            });
+        }
+
+        function toggleFirstThree() {
+            document.querySelectorAll('p:nth-child(-n+3)').forEach(p => {
+                p.classList.toggle('highlight');
+            });
+        }
+
+        function toggleLast() {
+            const last = document.querySelector('p:last-of-type');
+            last.classList.toggle('highlight');
+        }
+    </script>
+</body>
+
+</html>

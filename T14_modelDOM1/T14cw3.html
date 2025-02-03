@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmiana Koloru Kwadratów</title>
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="square1" class="square"></div>
+    <div id="square2" class="square"></div>
+    <div id="square3" class="square"></div>
+    <div id="square4" class="square"></div>
+    <div id="square5" class="square"></div>
+    
+    <script>
+        function changeColor(id) {
+            var square = document.getElementById(id);
+            if (square.style.backgroundColor === 'blue') {
+                square.style.backgroundColor = 'magenta';
+            } else {
+                square.style.backgroundColor = 'blue';
+            }
+        }
+
+        var squares = document.getElementsByClassName("square");
+        for (var i = 0; i < squares.length; i++) {
+            squares[i].onclick = function () {
+                changeColor(this.id);
+            };
+        }
+    </script>
+</body>
+</html>

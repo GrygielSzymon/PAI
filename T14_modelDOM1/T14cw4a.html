@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1" class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p id="p2" class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p id="p3" class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p id="p4" class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p id="p5" class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+    <p id="p6" class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
+
+    <button onclick="toggleEven()">Toggle Even Formatting</button>
+    <button onclick="toggleOdd()">Toggle Odd Formatting</button>
+    <button onclick="toggleFirstThree()">Toggle First Three Formatting</button>
+    <button onclick="toggleLast()">Toggle Last Paragraph</button>
+
+    <script>
+        function toggleEven() {
+            const evens = document.getElementsByClassName('even');
+            for (let p of evens) {
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+                p.style.color = p.style.color === 'black' ? 'blue' : 'black';
+                p.style.fontFamily = p.style.fontFamily === 'Arial' ? 'Times New Roman' : 'Arial';
+            }
+        }
+
+        function toggleOdd() {
+            const odds = document.getElementsByClassName('odd');
+            for (let p of odds) {
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightgrey' ? 'white' : 'lightgrey';
+                p.style.color = p.style.color === 'black' ? 'red' : 'black';
+                p.style.fontFamily = p.style.fontFamily === 'Arial' ? 'Courier New' : 'Arial';
+            }
+        }
+
+        function toggleFirstThree() {
+            const paragraphs = document.getElementsByTagName('p');
+            for (let i = 0; i < 3; i++) {
+                const p = paragraphs[i];
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'yellow' ? 'white' : 'yellow';
+                p.style.color = p.style.color === 'black' ? 'green' : 'black';
+                p.style.fontFamily = p.style.fontFamily === 'Arial' ? 'Verdana' : 'Arial';
+            }
+        }
+
+        function toggleLast() {
+            const paragraphs = document.getElementsByTagName('p');
+            const last = paragraphs[paragraphs.length - 1];
+            last.style.letterSpacing = last.style.letterSpacing === '2px' ? 'normal' : '2px';
+            last.style.textTransform = last.style.textTransform === 'uppercase' ? 'none' : 'uppercase';
+        }
+    </script>
+</body>
+
+</html>
