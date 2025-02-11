@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: white;
+            margin: 0;
+        }
+
+        header {
+            background-color: mediumblue;
+            color: white;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>LISTA ZADAŃ</h1>
+        <input id="input" placeholder="Wpisz treść zadania">
+        <button onclick="addTask()">Dodaj</button>
+    </header>
+
+    <ul id="tasklist"></ul>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("input");
+            let task = input.value.trim();
+            if (task) {
+                let li = document.createElement("li");
+                li.textContent = task;
+                document.getElementById("tasklist").appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

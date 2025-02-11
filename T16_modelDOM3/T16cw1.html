@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            font-size: 20px;
+        }
+
+        .link {
+            font-size: 20px;
+        }
+
+        .link:hover {
+            text-decoration: none;
+        }
+
+        .img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="addElement()">Dodaj elementy</button>
+    <div id="content"></div>
+    <script>
+        function addElement() {
+            let div = document.getElementById("content")
+
+            let header = document.createElement("h2")
+            header.textContent = "Polecane strony"
+
+            let link1 = document.createElement("a")
+            link1.href = "https://github.com/GrygielSzymon"
+            link1.textContent = "Mój GitHub"
+
+            let link2 = document.createElement("a")
+            link2.href = "https://szymongrygiel.pl"
+            link2.textContent = "Moja strona"
+
+            const img = document.createElement("img")
+            img.src = "wiewiorka.png"
+
+            div.appendChild(header)
+            div.appendChild(link1)
+            div.appendChild(document.createElement("br"))
+            div.appendChild(link2)
+            div.appendChild(document.createElement("br"))
+            div.appendChild(img)
+        }
+    </script>
+
+</body>
+
+</html>
