@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Przykładowa strona</title>
+    <title>document</title>
     <style>
         .custom-class {
-            width: 300px;
-            height: 150px;
-            background-color: #4CAF50;
+            width: 200px;
+            height: 250px;
+            background-color: #2b92ce;
             color: white;
+            margin: 10px;
             text-align: center;
-            line-height: 150px;
         }
     </style>
 </head>
@@ -28,7 +28,9 @@
 
     <img id="myImage" src="e4.jpg" alt="Przykładowy obrazek">
 
-    <a id="myLink" href="https://kierunekalaska.pl/alaska-w-pigulce-podstawowe-informacje/">Przejdź do strony</a>
+    <a id="myLink"
+        href="https://www.nuerburgring.de/en/?srsltid=AfmBOooI6Cv88ScVTGyQvXaII6WViKw-t5TIXlUX2nNjvcoJccpLWa5p">Przejdź
+        do strony</a>
 
     <script>
         function addClassToDiv() {
@@ -45,8 +47,8 @@
 
         function changeLink() {
             var link = document.getElementById("myLink");
-            link.href = "https://pl.wikipedia.org/wiki/Alaska";
-            link.innerHTML = "Przejdz";
+            link.href = "https://pl.wikipedia.org/wiki/Nürburgring";
+            link.innerHTML = "Przejdz do innej strony";
         }
     </script>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria</title>
+    <title>document</title>
     <style>
         body,
         html {
@@ -62,23 +62,23 @@
 <body>
 
     <div class="gallery">
-        <img id="image" src="3_1.jpg" alt="Obraz 1">
-        <p id="text">opis obrazu 1</p>
+        <img id="image" src="1.png" alt="Obraz 1">
+        <p id="text">Emoji OK</p>
 
         <div class="buttons">
-            <button onclick="changeImage(0)" id="bt1">obraz 1</button>
-            <button onclick="changeImage(1)" id="bt2">obraz 2</button>
-            <button onclick="changeImage(2)" id="bt3">obraz 3</button>
-            <button onclick="changeImage(3)" id="bt4">obraz 4</button>
+            <button onclick="changeImage(0)" id="image1">1</button>
+            <button onclick="changeImage(1)" id="image2">2</button>
+            <button onclick="changeImage(2)" id="image3">3</button>
+            <button onclick="changeImage(3)" id="image4">4</button>
         </div>
     </div>
 
     <script>
         const images = [
-            { src: "3_1.jpg", text: "Opis obrazu 1" },
-            { src: "3_2.jpg", text: "Opis obrazu 2" },
-            { src: "3_3.jpg", text: "Opis obrazu 3" },
-            { src: "3_4.jpg", text: "Opis obrazu 4" }
+            { src: "1.png", text: "Emoji OK" },
+            { src: "2.png", text: "Emoji Cry" },
+            { src: "e4.jpg", text: "Nürburgring" },
+            { src: "bulbOn.png", text: "Light Bulb" }
         ];
 
         function changeImage(index) {
@@ -90,7 +90,7 @@
 
             const buttons = document.querySelectorAll(".buttons button");
             buttons.forEach(button => button.classList.remove("active"));
-            document.getElementById(`bt${index + 1}`).classList.add("active");
+            document.getElementById(`image${index + 1}`).classList.add("active");
         }
     </script>
 

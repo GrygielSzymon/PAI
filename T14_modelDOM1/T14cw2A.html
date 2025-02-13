@@ -4,37 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona z menu</title>
+    <title>Document</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
         }
+        #menu{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="button-container">
-        <button onclick="hideShow()">Pokaż/Ukryj Menu</button>
-    </div>
+        <button onclick="Show()">Pokaż Menu</button>
+        <button onclick="hide()">Ukryj Menu</button>
 
     <ul id="menu">
-        <li><a href="">Link 1</a></li>
-        <li><a href="">Link 2</a></li>
-        <li><a href="">Link 3</a></li>
-        <li><a href="">Link 4</a></li>
-        <li><a href="">Link 5</a></li>
+        <li><a href="#">Jeden</a></li>
+        <li><a href="#">Dwa</a></li>
+        <li><a href="#">Trzy</a></li>
+        <li><a href="#">Cztery</a></li>
+        <li><a href="#">Pięć</a></li>
     </ul>
 
     <script>
-        function hideShow() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
+        function Show() {
+            document.getElementById("menu").style.display = "block"
+        }
+        function hide() {
+            document.getElementById("menu").style.display = "none"
         }
     </script>
 

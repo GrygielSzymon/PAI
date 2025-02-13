@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #002255;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        #menu {
+            display: block;
+        }
+
+        .link {
+            display: block;
+            width: 200px;
+            height: 50px;
+            background-color: #ccc;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+            border: 2px solid #333;
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="menu">
+        <a href="#" class="link">Link 1</a>
+        <a href="#" class="link">Link 2</a>
+        <a href="#" class="link">Link 3</a>
+    </div>
+
+    <button onclick="changePosition()">Zmień położenie</button>
+    <button onclick="changeColor()">Zmień kolor</button>
+
+    <script>
+        let isVertical = true;
+
+        function changePosition() {
+            let menu = document.getElementById('menu');
+            if (isVertical) {
+                menu.style.display = 'flex';
+                menu.style.flexDirection = 'row';
+                menu.style.justifyContent = 'space-around';
+            } else {
+                menu.style.display = 'block';
+            }
+            isVertical = !isVertical;
+        }
+
+        function changeColor() {
+            let links = document.getElementsByClassName('link');
+            for (let link of links) {
+                link.style.backgroundColor = '#48D4B0';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

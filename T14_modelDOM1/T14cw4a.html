@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Document</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,10 +18,10 @@
     <p id="p5" class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
     <p id="p6" class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
 
-    <button onclick="toggleEven()">Toggle Even Formatting</button>
-    <button onclick="toggleOdd()">Toggle Odd Formatting</button>
-    <button onclick="toggleFirstThree()">Toggle First Three Formatting</button>
-    <button onclick="toggleLast()">Toggle Last Paragraph</button>
+    <button onclick="toggleEven()">Formatuj parzyste </button>
+    <button onclick="toggleOdd()">Formatuj nieparzyste</button>
+    <button onclick="toggleFirstThree()">Formatuj 3 pierwsze</button>
+    <button onclick="toggleLast()">Formatuj ostatni akapit</button>
 
     <script>
         function toggleEven() {
@@ -49,7 +49,7 @@
             for (let i = 0; i < 3; i++) {
                 const p = paragraphs[i];
                 p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
-                p.style.backgroundColor = p.style.backgroundColor === 'yellow' ? 'white' : 'yellow';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightyellow' ? 'white' : 'lightyellow';
                 p.style.color = p.style.color === 'black' ? 'green' : 'black';
                 p.style.fontFamily = p.style.fontFamily === 'Arial' ? 'Verdana' : 'Arial';
             }

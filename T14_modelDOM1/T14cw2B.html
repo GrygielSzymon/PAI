@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona z menu</title>
+    <title>Document</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,42 +12,38 @@
             color: #333;
         }
 
-        .dis1 {
+        .visible {
             display: block;
         }
 
-        .dis2 {
+        .hidden {
             display: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="button-container">
-        <button onclick="hideShow()">Pokaż/Ukryj Menu</button>
-    </div>
+    <button onclick="Show()">Pokaż Menu</button>
+    <button onclick="hide()">Ukryj Menu</button>
 
-    <ul id="menu">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-        <li><a href="#">Link 5</a></li>
-    </ul>
+<ul id="menu" class="hidden">
+    <li><a href="#">Jeden</a></li>
+    <li><a href="#">Dwa</a></li>
+    <li><a href="#">Trzy</a></li>
+    <li><a href="#">Cztery</a></li>
+    <li><a href="#">Pięć</a></li>
+</ul>
 
-    <script>
-        function hideShow() {
-            var menu = document.querySelector("#menu");
-
-            if (menu.classList.contains("dis2")) {
-                menu.classList.remove("dis2");
-                menu.classList.add("dis1");
-            } else {
-                menu.classList.remove("dis1");
-                menu.classList.add("dis2");
-            }
-        }
-    </script>
+<script>
+    function Show() {
+        document.querySelector("#menu").classList.remove("hidden");
+        document.querySelector("#menu").classList.add("visible");
+    }
+    function hide() {
+        document.querySelector("#menu").classList.remove("visible");
+        document.querySelector("#menu").classList.add("hidden");
+    }
+</script>
 
 </body>
 

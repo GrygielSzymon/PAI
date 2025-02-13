@@ -7,61 +7,50 @@
     <title>Document</title>
     <style>
         body {
-            background-color: hwb(216 7% 50%);
+            background-color: rgb(49, 65, 87);
             color: #fff;
             font-size: 18px;
-        }
-
-        .back {
-            background-color: blue;
-        }
-
-        .back1 {
-            background-color: gray;
-        }
-
-        .back2 {
-            background-color: magenta;
         }
     </style>
 </head>
 
 <body>
-    <h2 class="class1">Nagłówek class1</h2>
-    <h3 class="class2">Nagłówek class2</h3>
-    <p class="class1">Akapit class1</p>
-    <p class="class2">Akapit class2</p>
-    <p id="id1">Akapit</p>
+    <h2 class="class1">Nagłówek z klasą = "class1"</h2>
+    <h3 class="class2">Nagłówek z klasą = "class2"</h3>
+    <p class="class1">Akapit z klasą = "class1"</p>
+    <p class="class1">Drugi akapit z klasą = "class1"</p>
+    <p id="id1">Akapit bez klasy z indentyfikatorem</p>
     <ul>
-        <li>1</li>
-        <li>2</li>
-        <li class="class2">3</li>
-        <li class="class2">4</li>
+        <li>punkt 1</li>
+        <li>punkt 2</li>
+        <li class="class2">punkt 3</li>
+        <li class="class2">punkt 4</li>
     </ul>
-    <p><button onclick="myFunction()">Kolor tła akapitu</button></p>
-    <p><button onclick="myFunction2()">Kolor tła i tekstu akapitu</button></p>
-    <p><button onclick="myFunction3()">Lista z class2</button></p>
-
-    <script>
-        function myFunction() {
-            const p = document.querySelector("p.class1");
-            p.classList.toggle("back");
-        }
-
-        function myFunction2() {
-            const p = document.querySelector("#id1");
-            p.classList.toggle("back1");
-            p.innerHTML = "<b>Świetnie!!!</b>";
-        }
-
-
-        function myFunction3() {
-            const listItems = document.querySelectorAll("ul li.class2");
-            for (let i = 0; i < listItems.length; i++) {
-                listItems[i].classList.toggle("back2");
-            }
-        }
-    </script>
+    <p><button onclick="acapitClass1()">zmień kolor tła pierwszego akapitu z klasą = "class1"</button></p>
+    <p><button onclick="acapitId()">zmień kolor tła i tekst akapitu z indentyfikatorem</button></p>
+    <p><button onclick="lastTwo()">zmień kolor tła 2 ostatnich punktów listy</button></p>
 </body>
+<script>
+    function acapitClass1() {
+        document.querySelector('p.class1').style.backgroundColor = 'yellow';
+    }
+
+
+    function acapitId() {
+        document.querySelector('#id1').style.backgroundColor = 'darkgray';
+        document.querySelector('#id1').innerHTML = 'Świetnie!!!';
+    }
+
+
+
+    function lastTwo() {
+        let list2 = document.querySelectorAll('li.class2');
+        for (let i = 0; i < list2.length; i++) {
+            list2[i].style.backgroundColor = 'darkgray';
+        }
+    }
+
+
+</script>
 
 </html>

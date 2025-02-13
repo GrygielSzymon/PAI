@@ -7,11 +7,6 @@
         body {
             font-family: Arial, sans-serif;
         }
-
-        .highlight {
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
     </style>
 </head>
 
@@ -23,33 +18,46 @@
     <p class="even">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
     <p class="odd">Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</p>
 
-    <button onclick="toggleEven()">Toggle Even Formatting</button>
-    <button onclick="toggleOdd()">Toggle Odd Formatting</button>
-    <button onclick="toggleFirstThree()">Toggle First Three Formatting</button>
-    <button onclick="toggleLast()">Toggle Last Paragraph</button>
+    <button onclick="toggleEven()">Formatuj parzyste </button>
+    <button onclick="toggleOdd()">Formatuj nieparzyste</button>
+    <button onclick="toggleFirstThree()">Formatuj 3 pierwsze</button>
+    <button onclick="toggleLast()">Formatuj ostatni akapit</button>
 
     <script>
         function toggleEven() {
             document.querySelectorAll('.even').forEach(p => {
-                p.classList.toggle('highlight');
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+                p.style.color = p.style.color === 'blue' ? 'black' : 'blue';
+                p.style.fontFamily = p.style.fontFamily === 'Times New Roman' ? 'Arial' : 'Times New Roman';
             });
         }
 
         function toggleOdd() {
             document.querySelectorAll('.odd').forEach(p => {
-                p.classList.toggle('highlight');
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightgrey' ? 'white' : 'lightgrey';
+                p.style.color = p.style.color === 'red' ? 'black' : 'red';
+                p.style.fontFamily = p.style.fontFamily === 'Courier New' ? 'Arial' : 'Courier New';
             });
         }
 
         function toggleFirstThree() {
             document.querySelectorAll('p:nth-child(-n+3)').forEach(p => {
-                p.classList.toggle('highlight');
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                p.style.backgroundColor = p.style.backgroundColor === 'lightyellow' ? 'white' : 'lightyellow';
+                p.style.color = p.style.color === 'green' ? 'black' : 'green';
+                p.style.fontFamily = p.style.fontFamily === 'Verdana' ? 'Arial' : 'Verdana';
             });
         }
 
         function toggleLast() {
             const last = document.querySelector('p:last-of-type');
-            last.classList.toggle('highlight');
+            document.querySelectorAll('.odd').forEach(p => {
+                p.style.textAlign = p.style.textAlign === 'center' ? 'right' : 'center';
+                last.style.letterSpacing = last.style.letterSpacing === '2px' ? 'normal' : '2px';
+                last.style.textTransform = last.style.textTransform === 'uppercase' ? 'none' : 'uppercase';
+            });
         }
     </script>
 </body>

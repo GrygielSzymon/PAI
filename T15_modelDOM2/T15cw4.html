@@ -7,17 +7,21 @@
     <title>Document</title>
     <style>
         body {
-            background-color: gray;
-            text-align: center;
-            align-items: center;
+            background-color: rgb(56, 49, 49);
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
-    <h1>Ciemno</h1>
     <button onclick="clk()">Włącz światło</button>
-    <img src="e1.jpg" height="400px" width="400px">
+    <h1>Ciemno</h1>
+
+    <img src="bulbOff.png" height="400px" width="400px">
     <script>
         let isLightOn = false;
 
@@ -27,12 +31,12 @@
             const h = document.querySelector("h1");
 
             if (isLightOn) {
-                img1.src = "e1.jpg";
+                img1.src = "bulbOff.png";
                 b.textContent = "Włącz światło";
                 h.textContent = "Ciemno";
-                document.body.style.backgroundColor = "gray";
+                document.body.style.backgroundColor = "rgb(56, 49, 49)";
             } else {
-                img1.src = "e3.jpg";
+                img1.src = "bulbOn.png";
                 b.textContent = "Wyłącz światło";
                 h.textContent = "Stała się jasność";
                 document.body.style.backgroundColor = "white";
