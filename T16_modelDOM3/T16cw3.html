@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabliczka Mnożenia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tabliczka mnożenia</h2>
+    <input type="number" id="start" placeholder="Początek">
+    <input type="number" id="end" placeholder="Koniec">
+    <button onclick="table()">Utwórz</button>
+    <div id="result"></div>
+
+    <script>
+        function table() {
+            let start = Number(document.getElementById("start").value);
+            let end = Number(document.getElementById("end").value);
+            let result = document.getElementById("result");
+
+            let table = "<table>";
+            for (let i = start; i <= end; i++) {
+                table += "<tr>";
+                for (let j = start; j <= end; j++) {
+                    table += `<td>${i * j}</td>`;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            result.innerHTML = table;
+        }
+    </script>
+</body>
+
+</html>

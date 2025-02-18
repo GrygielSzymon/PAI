@@ -25,9 +25,23 @@
             padding: 10px;
         }
 
+        input {
+            border-radius: 10px;
+        }
+
         ul {
+            font-size: 30px;
             list-style: none;
             padding: 0;
+            border: 2px;
+        }
+
+        li {
+            font-size: 20px;
+            background-color: aqua;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid;
         }
     </style>
 </head>
@@ -45,7 +59,7 @@
     <script>
         function addTask() {
             let input = document.getElementById("input");
-            let task = input.value.trim();
+            let task = input.value;
             if (task) {
                 let li = document.createElement("li");
                 li.textContent = task;
