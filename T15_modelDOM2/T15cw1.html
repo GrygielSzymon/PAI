@@ -35,20 +35,35 @@
     <script>
         function addClassToDiv() {
             var div = document.getElementById("myDiv");
-            div.classList.add("custom-class");
-            div.innerHTML = "Tekst zmieniony i dodana klasa";
+            if (div.classList.contains("custom-class")) {
+                div.classList.remove("custom-class")
+                div.innerHTML = "Tekst w div"
+            } else {
+                div.classList.add("custom-class")
+                div.innerHTML = "Tekst zmieniony i dodana klasa"
+            }
         }
 
         function setImageSize() {
             var img = document.getElementById("myImage");
-            img.width = 300;
-            img.height = 200;
+            if (img.width === 300 && img.height === 200) {
+                img.width = 150;
+                img.height = 150;
+            } else {
+                img.width = 300;
+                img.height = 200;
+            }
         }
 
         function changeLink() {
             var link = document.getElementById("myLink");
-            link.href = "https://pl.wikipedia.org/wiki/Nürburgring";
-            link.innerHTML = "Przejdz do innej strony";
+            if (link.href === "https://pl.wikipedia.org/wiki/N%C3%BCrburgring") {
+                link.href = "https://www.nuerburgring.de/en/";
+                link.innerHTML = "Przejdź do strony";
+            } else {
+                link.href = "https://pl.wikipedia.org/wiki/N%C3%BCrburgring";
+                link.innerHTML = "Przejdź do innej strony";
+            }
         }
     </script>
 

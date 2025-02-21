@@ -11,15 +11,16 @@
             background-color: #f4f4f9;
             color: #333;
         }
-        #menu{
+
+        #menu {
             display: none;
         }
     </style>
 </head>
 
 <body>
-        <button onclick="Show()">Pokaż Menu</button>
-        <button onclick="hide()">Ukryj Menu</button>
+    <button onclick="show()">Pokaż Menu</button>
+    <button onclick="hide()">Ukryj Menu</button>
 
     <ul id="menu">
         <li><a href="#">Jeden</a></li>
@@ -30,7 +31,7 @@
     </ul>
 
     <script>
-        function Show() {
+        function show() {
             document.getElementById("menu").style.display = "block"
         }
         function hide() {

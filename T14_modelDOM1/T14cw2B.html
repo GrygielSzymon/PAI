@@ -23,27 +23,27 @@
 </head>
 
 <body>
-    <button onclick="Show()">Pokaż Menu</button>
+    <button onclick="show()">Pokaż Menu</button>
     <button onclick="hide()">Ukryj Menu</button>
 
-<ul id="menu" class="hidden">
-    <li><a href="#">Jeden</a></li>
-    <li><a href="#">Dwa</a></li>
-    <li><a href="#">Trzy</a></li>
-    <li><a href="#">Cztery</a></li>
-    <li><a href="#">Pięć</a></li>
-</ul>
+    <ul id="menu" class="hidden">
+        <li><a href="#">Jeden</a></li>
+        <li><a href="#">Dwa</a></li>
+        <li><a href="#">Trzy</a></li>
+        <li><a href="#">Cztery</a></li>
+        <li><a href="#">Pięć</a></li>
+    </ul>
 
-<script>
-    function Show() {
-        document.querySelector("#menu").classList.remove("hidden");
-        document.querySelector("#menu").classList.add("visible");
-    }
-    function hide() {
-        document.querySelector("#menu").classList.remove("visible");
-        document.querySelector("#menu").classList.add("hidden");
-    }
-</script>
+    <script>
+        function show() {
+            document.querySelector("#menu").classList.remove("hidden");
+            document.querySelector("#menu").classList.add("visible");
+        }
+        function hide() {
+            document.querySelector("#menu").classList.remove("visible");
+            document.querySelector("#menu").classList.add("hidden");
+        }
+    </script>
 
 </body>
 

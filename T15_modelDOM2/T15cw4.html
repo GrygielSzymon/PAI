@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>document</title>
     <style>
         body {
             background-color: rgb(56, 49, 49);
@@ -18,14 +18,14 @@
 </head>
 
 <body>
-    <button onclick="clk()">Włącz światło</button>
+    <button onclick="klik()">Włącz światło</button>
     <h1>Ciemno</h1>
 
     <img src="bulbOff.png" height="400px" width="400px">
     <script>
         let isLightOn = false;
 
-        function clk() {
+        function klik() {
             const img1 = document.querySelector("img");
             const b = document.querySelector("button");
             const h = document.querySelector("h1");
@@ -34,11 +34,13 @@
                 img1.src = "bulbOff.png";
                 b.textContent = "Włącz światło";
                 h.textContent = "Ciemno";
+                h.style.color = "white";
                 document.body.style.backgroundColor = "rgb(56, 49, 49)";
             } else {
                 img1.src = "bulbOn.png";
                 b.textContent = "Wyłącz światło";
                 h.textContent = "Stała się jasność";
+                h.style.color = "blue";
                 document.body.style.backgroundColor = "white";
             }
 

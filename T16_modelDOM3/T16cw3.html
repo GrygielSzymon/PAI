@@ -4,21 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabliczka Mnożenia</title>
+    <title>document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
         table {
-            margin: 20px auto;
+            margin-top: 30px;
             border-collapse: collapse;
         }
 
-        td {
-            border: 1px solid black;
-            padding: 10px;
+        td,
+        th {
+            border: 2px solid black;
+            padding: 5px;
         }
     </style>
 </head>
@@ -28,25 +24,51 @@
     <input type="number" id="start" placeholder="Początek">
     <input type="number" id="end" placeholder="Koniec">
     <button onclick="table()">Utwórz</button>
-    <div id="result"></div>
-
+    <table id="result"></table>
     <script>
         function table() {
             let start = Number(document.getElementById("start").value);
             let end = Number(document.getElementById("end").value);
             let result = document.getElementById("result");
+            result.innerHTML = "";
 
-            let table = "<table>";
-            for (let i = start; i <= end; i++) {
-                table += "<tr>";
-                for (let j = start; j <= end; j++) {
-                    table += `<td>${i * j}</td>`;
+            let row = document.createElement("tr");
+            let head_cell = document.createElement("th");
+
+            if (start < end) {
+                head_cell.innerText = "*";
+                row.appendChild(head_cell);
+                result.appendChild(row);
+
+
+                for (let i = start; i <= end; i++) {
+                    let head_cell = document.createElement("th");
+                    head_cell.innerText = i;
+                    row.appendChild(head_cell);
                 }
-                table += "</tr>";
+                result.appendChild(row);
+
+                for (let i = start; i <= end; i++) {
+                    let row = document.createElement("tr");
+                    let head_cell = document.createElement("th");
+                    head_cell.innerText = i;
+                    row.appendChild(head_cell);
+
+                    for (let j = start; j <= end; j++) {
+                        let cell = document.createElement("td");
+                        cell.innerText = i * j;
+                        row.appendChild(cell);
+                    }
+                    result.appendChild(row);
+                }
             }
-            table += "</table>";
-            result.innerHTML = table;
+            else {
+                result.innerHTML = "Początek nie może być większy od końca";
+            }
+
+
         }
+
     </script>
 </body>
 

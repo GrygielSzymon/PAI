@@ -11,6 +11,18 @@
             color: #fff;
             font-size: 18px;
         }
+
+        .back {
+            background-color: blue;
+        }
+
+        .back1 {
+            background-color: gray;
+        }
+
+        .back2 {
+            background-color: magenta;
+        }
     </style>
 </head>
 
@@ -32,21 +44,23 @@
 </body>
 <script>
     function acapitClass1() {
-        document.querySelector('p.class1').style.backgroundColor = 'yellow';
+        const p = document.querySelector("p.class1");
+        p.classList.toggle("back");
     }
 
 
     function acapitId() {
-        document.querySelector('#id1').style.backgroundColor = 'darkgray';
-        document.querySelector('#id1').innerHTML = 'Świetnie!!!';
+        const p = document.querySelector("#id1");
+        p.classList.toggle("back1");
+        p.innerHTML = "<b>Świetnie!!!</b>";
     }
 
 
 
     function lastTwo() {
-        let list2 = document.querySelectorAll('li.class2');
-        for (let i = 0; i < list2.length; i++) {
-            list2[i].style.backgroundColor = 'darkgray';
+        const listItems = document.querySelectorAll("ul li.class2");
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].classList.toggle("back2");
         }
     }
 

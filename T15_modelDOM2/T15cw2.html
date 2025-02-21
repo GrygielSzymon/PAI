@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T15cw2</title>
+    <title>document </title>
     <style>
         body {
             background-color: navy;
@@ -19,7 +19,6 @@
             padding: 15px;
             margin: 15px;
             border: 2px solid white;
-            border-radius: 10px;
         }
 
         .img-border {
@@ -34,7 +33,6 @@
             font-size: 16px;
             background-color: white;
             color: navy;
-            border-radius: 5px;
         }
 
         button:hover {
@@ -47,8 +45,8 @@
     <div class="container">
         <img id="emoji" src="1.jpg" alt="" width="150">
         <br>
-        <button onclick="changeImage()" id="btn1">Kliknij mnie</button>
-        <button onclick="changeText()" id="btn2">Kliknij mnie też</button>
+        <button onclick="changeImage()" id="button1">Kliknij mnie</button>
+        <button onclick="changeText()" id="button2">Kliknij mnie też</button>
     </div>
     <script>
         function changeImage() {
@@ -56,11 +54,11 @@
             img.src = "2.jpg";
             img.alt = "3.jpg";
             img.classList.add("img-border");
-            document.getElementById("btn1").innerText = "Nie klikaj mnie!";
+            document.getElementById("button1").innerText = "Nie klikaj mnie!";
         }
 
         function changeText() {
-            let btn2 = document.getElementById("btn2");
+            let btn2 = document.getElementById("button2");
             btn2.innerText = "Ups";
             btn2.style.backgroundColor = "red";
             btn2.style.color = "white";
