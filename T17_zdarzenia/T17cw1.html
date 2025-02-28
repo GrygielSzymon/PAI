@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .gallery {
+            text-align: center;
+        }
+
+        .large-image {
+            width: 650px;
+            height: 450px;
+            margin-bottom: 20px;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 75px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: #3498db;
+        }
+
+        .thumbnail.selected {
+            border-color: #e74c3c;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <img id="mainImage" class="large-image" src="1.jpg">
+        <p id="description" class="description">Opis obrazu 1</p>
+
+        <div class="thumbnails">
+            <div class="thumbnail" id="thumb1">
+                <img src="1.jpg" alt="Obraz 1">
+            </div>
+            <div class="thumbnail" id="thumb2">
+                <img src="2.jpg" alt="Obraz 2">
+            </div>
+            <div class="thumbnail" id="thumb3">
+                <img src="3.png" alt="Obraz 3">
+            </div>
+            <div class="thumbnail" id="thumb4">
+                <img src="4.jpg" alt="Obraz 4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "1.jpg", description: "Opis obrazu 1" },
+            { src: "2.jpg", description: "Opis obrazu 2" },
+            { src: "3.png", description: "Opis obrazu 3" },
+            { src: "4.jpg", description: "Opis obrazu 4" }
+        ];
+
+        const mainImage = document.getElementById('mainImage');
+        const description = document.getElementById('description');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        function showImage(index) {
+            mainImage.src = images[index].src;
+            description.textContent = images[index].description;
+
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('selected', i === index);
+            });
+        }
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('mouseover', () => showImage(index));
+            thumb.addEventListener('mouseout', () => {
+                if (!thumb.classList.contains('selected')) {
+                    mainImage.src = images[0].src;
+                    description.textContent = images[0].description;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
