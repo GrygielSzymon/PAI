@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<p>🎈</p>
+
+<body>
+    <script>
+        let p = document.querySelector("p");
+        let size;
+        function setsize(newSize) {
+            size = newSize;
+            p.style.fontSize = size + "px";
+        }
+        setsize(20);
+
+        function arrows(event) {
+            if (size > 70) {
+                p.textContent = "💥";
+                document.body.removeEventListener("keydown", arrows);
+            }
+            else if (event.key == "ArrowUp") {
+                setsize(size * 1.1);
+                event.preventDeflaut();
+            }
+            else if (event.key == "ArrowDown") {
+                setsize(size * 0.9);
+                event.preventDeflalt();
+            }
+        }
+        document.body.addEventListener("keydown", arrows);
+
+    </script>
+</body>
+
+</html>

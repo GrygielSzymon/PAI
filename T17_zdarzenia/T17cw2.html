@@ -1,60 +1,43 @@
 <!DOCTYPE html>
-<html lang="pl">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T17Cw2</title>
+    <title>Document</title>
     <style>
-        body {
+        body{
+            margin: 0;
+            padding: 0;
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
         }
 
-        .info {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .box {
-            width: 255px;
-            height: 255px;
-            background-color: lightgray;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 5px solid green;
+        div{
+            font-size: 20px;
+            padding: 10px;
+            background-color: aqua;
+            width: 400px;
+            height: 100px;
         }
     </style>
 </head>
-
 <body>
-    <div class="info" id="mouseInfo">MouseX: 0 MouseY: 0</div>
-    <div class="box" id="colorBox">R=0 G=0 B=0</div>
-
+    <div></div>
     <script>
-        document.addEventListener("mousemove", function (event) {
-            let x = event.clientX;
-            let y = event.clientY;
-            let avg = Math.ceil((x + y) / 2);
+        const div = document.querySelector("div");
 
-            let red = x;
-            let green = y;
-            let blue = avg;
+        document.addEventListener("mousemove", function (a)
+        {
+            const mouseR = a.clientX % 256;
+            const mouseG = a.clientY % 256;
+            const mouseB = (mouseR + mouseG) / 2;
 
-            let box = document.getElementById("colorBox");
-            let info = document.getElementById("mouseInfo");
-
-            info.textContent = `MouseX: ${x} MouseY: ${y}`;
-            box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-            box.textContent = `R=${red} G=${green} B=${blue}`;
-        });
+            div.style.backgroundColor = `rgb(${mouseR}, ${mouseG}, ${mouseB})`;
+            div.textContent = `RGB(${mouseR}, ${mouseG}, ${mouseB})`;
+        }); 
+        
     </script>
 </body>
-
 </html>
