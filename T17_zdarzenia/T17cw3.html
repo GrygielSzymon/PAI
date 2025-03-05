@@ -4,44 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document/title>
     <style>
-        p{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        body {
+            margin: 0;
+            padding: 0;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        div {
+            background-color: lightgray;
+            width: 255px;
+            height: 255px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
-<p>🎈</p>
 
 <body>
+    <div>
+        <p id="rgb-values"></p>
+    </div>
+
     <script>
-        let p = document.querySelector("p");
-        let size;
-        function setsize(newSize) {
-            size = newSize;
-            p.style.fontSize = size + "px";
-        }
-        setsize(20);
+        const body = document.querySelector("body");
+        const div = document.querySelector("div");
+        const rgbValues = document.getElementById("rgb-values");
+        const mousePositionInfo = document.getElementById("mouse-position-info");
 
-        function arrows(event) {
-            if (size > 70) {
-                p.textContent = "💥";
-                document.body.removeEventListener("keydown", arrows);
-            }
-            else if (event.key == "ArrowUp") {
-                setsize(size * 1.1);
-                event.preventDeflaut();
-            }
-            else if (event.key == "ArrowDown") {
-                setsize(size * 0.9);
-                event.preventDeflalt();
-            }
-        }
-        document.body.addEventListener("keydown", arrows);
+        div.addEventListener("mousemove", function (e) {
+            const mouseX = e.offsetX;
+            const mouseY = e.offsetY;
 
+            const mouseR = mouseX;
+            const mouseG = mouseY;
+            const mouseB = Math.ceil((mouseR + mouseG) / 2);
+
+
+            body.style.backgroundColor = `rgb(${mouseR}, ${mouseG}, ${mouseB})`;
+            rgbValues.textContent = `R = ${mouseR} G = ${mouseG} B = ${mouseB}`;
+        });
     </script>
 </body>
 
