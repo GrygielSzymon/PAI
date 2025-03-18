@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 280px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            padding: 10px;
+            margin: 8px 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #e0e0e0;
+        }
+
+        #out {
+            margin-top: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <legend>Kalkulator</legend>
+        <label>
+            a: <input type="text" name="numberA" value="">
+        </label>
+        <label>
+            b: <input type="text" name="numberB" value="">
+        </label>
+        <select name="option">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="button" value="Oblicz">
+        <p id="out"></p>
+    </form>
+
+    <script>
+        
+    </script>
+
+</body>
+
+</html>

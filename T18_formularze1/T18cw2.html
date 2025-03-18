@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 280px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            padding: 10px;
+            margin: 8px 5px;
+        }
+
+        #out {
+            margin-top: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <legend>Kalkulator</legend>
+        <label>
+            a: <input type="text" id="numberA">
+        </label>
+        <label>
+            b: <input type="text" id="numberB">
+        </label>
+        <label>
+            <input type="radio" name="operation" value="+"> +
+        </label>
+        <label>
+            <input type="radio" name="operation" value="-"> -
+        </label>
+        <label>
+            <input type="radio" name="operation" value="*"> *
+        </label>
+        <label>
+            <input type="radio" name="operation" value="/"> /
+        </label>
+
+        <p id="out"></p>
+    </form>
+
+    
+
+    <script>
+        const numberA = document.getElementById("numberA");
+        const numberB = document.getElementById("numberB");
+        const radios = document.querySelectorAll("input[name='operation']");
+        const out = document.getElementById("out");
+
+        radios.forEach(radio => {
+            radio.addEventListener("change", () => {
+                let a = parseFloat(numberA.value);
+                let b = parseFloat(numberB.value);
+                let c;
+
+                switch (document.querySelector("input[name='operation']:checked")?.value) {
+                    case "+":
+                        c = a + b
+                        out.innerText = `Suma liczb: ${a} i ${b} wynosi ${c}`;
+                        break;
+                    case "-":
+                        c = a - b
+                        out.innerText = `Różnica liczb: ${a} i ${b} wynosi ${c}`;
+                        break;
+                    case "*":
+                        c = a * b
+                        out.innerText = `Iloczyn liczb: ${a} i ${b} wynosi ${c}`;
+                        break;
+                    case "/":
+                        if (a == 0 || b == 0) {
+                            out.innerText = `Liczba nie może być zerem`
+                        } else {
+                            c = a / b
+                            out.innerText = `Iloraz liczb: ${a} i ${b} wynosi ${c}`;
+                        }
+                        break;
+                    default:
+                        return;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
