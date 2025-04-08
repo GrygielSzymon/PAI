@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <h2>Policz koszt ogłoszenia</h2>
+    <label for="number">Liczba ogłoszeń: </label><br>
+    <input type="number" name="number" id="number"><br>
+    <input type="checkbox" name="client" id="client"> Jestem stałym klientem<br>
+    <button type="submit" onclick="kalkulacja()">Kalkulacja</button>
+    <p id="out"></p>
+
+    <script>
+        function kalkulacja() {
+            let number = document.getElementById("number").value;
+            let client = document.getElementById("client").checked;
+            let price;
+
+            if (number <= 40) {
+                price = number * 3;
+            } else {
+                price = number * 2;
+            }
+
+            if (client) {
+                price -= number * 0.3;
+            }
+
+            document.getElementById("out").innerHTML = "Twoje ogłoszenia będą kosztować: " + price + " PLN";
+        }
+    </script>
+</body>
+
+</html>

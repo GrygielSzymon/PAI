@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <h1>Kafelkowanie łazienki</h1>
+    <p>powierzchnia w m&sup2<input type="number" name="area" id="area"></p>
+    <input type="radio" name="type" id="type1" value="70"> Płytki 20 x 20 cm<br>
+    <input type="radio" name="type" id="type2" value="80"> Płytki 25 x 12 cm<br><br>
+    <button type="submit" onclick="count()">PRZELICZ</button>
+    <p id="out"></p>
+
+    <script>
+        function count() {
+            let area = document.getElementById("area").value;
+            let type = document.querySelector('input[name="type"]:checked').value;
+            let choice = area * type;
+            document.getElementById('out').innerHTML = "Koszt kafelkowania: " + choice + " zł";
+        }
+    </script>
+</body>
+
+</html>

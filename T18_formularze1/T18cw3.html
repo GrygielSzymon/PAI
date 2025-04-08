@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
+    <title>Document</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,33 +48,65 @@
         #out {
             margin-top: 15px;
             color: #333;
-        }
+        }   
     </style>
 </head>
 
 <body>
-    <form>
-        <legend>Kalkulator</legend>
-        <label>
-            a: <input type="text" name="numberA" value="">
-        </label>
-        <label>
-            b: <input type="text" name="numberB" value="">
-        </label>
-        <select name="option">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
-        <input type="button" value="Oblicz">
-        <p id="out"></p>
-    </form>
+    <fieldset>
+        <form method="get">
+            <legend id="calc">KALKULATOR</legend>
+            <label>a: <input type="number" name="numberA" value="" style="height: 13px" style="width: 3px"> </label>
+            </br>
+            <label>b: <input type="number" name="numberB" value=""> </label></br>
+            <select name="sign">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+            <input type="button" value="OBLICZ" id="obl">
+            <p id="out"></p>
+        </form>
+    </fieldset>
 
     <script>
-        
-    </script>
 
+        const select = document.querySelector("select[name='sign']");
+        const output = document.getElementById("out");
+        const btn = document.querySelector("#obl");
+
+        btn.addEventListener("click", () => {
+            const a = parseFloat(document.querySelector("input[name='numberA']").value);
+            const b = parseFloat(document.querySelector("input[name='numberB']").value);
+
+
+            const valueS = select.value;
+            if (valueS == "+") {
+                let c = a + b;
+                output.textContent = `Suma liczb ${a} i ${b}: ${c}`;
+            }
+            else if (valueS == "-") {
+                let c = a - b;
+                output.textContent = `Różnica liczb ${a} i ${b}: ${c}`;
+            }
+            else if (valueS == "*") {
+                let c = a * b;
+                output.textContent = `Iloczyn liczb ${a} i ${b}: ${c}`;
+            }
+            else if (valueS == "/") {
+                if (b != 0) {
+                    let c = a / b;
+                    output.textContent = `Różnica liczb ${a} i ${b}: ${c}`;
+                }
+                else {
+                    output.textContent = "Nie można dzielić przez 0";
+                }
+            }
+
+        });
+
+    </script>
 </body>
 
 </html>

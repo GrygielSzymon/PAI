@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <h3>Oblicz koszt dostawy</h3>
+    <input type="checkbox" name="city" id="city"> Jestem z Zielonej Góry
+    <p>albo</p>
+    <label for="distance">Podaj liczbę kilometrów od Zielonej Góry:</label> <input type="number" name="distance"
+        id="distance"><br>
+    <button type="submit" onclick="calculate()">Oblicz</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            var city = document.getElementById("city");
+            var distance = document.getElementById("distance");
+            var result = document.getElementById("result");
+
+            if (Boolean(city.checked)) {
+                result.innerHTML = "Dowieziemy Twoją pizzę za darmo";
+            }
+            else{
+                result.innerHTML = "Dowóz będzie cię kosztował cię: " + distance.value * 2 + " złotych";
+            }
+        }
+    </script>
+</body>
+
+</html>
