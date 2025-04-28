@@ -4,24 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Kafelkowanie łazienki</h1>
-    <p>powierzchnia w m&sup2<input type="number" name="area" id="area"></p>
-    <input type="radio" name="type" id="type1" value="70"> Płytki 20 x 20 cm<br>
-    <input type="radio" name="type" id="type2" value="80"> Płytki 25 x 12 cm<br><br>
-    <button type="submit" onclick="count()">PRZELICZ</button>
-    <p id="out"></p>
-
+    <fieldset>
+        <legend>Kafelkowanie Łazienki</legend>
+        <label>powierzchnia w m^2<input type="number" name="numberA" value=""></label><br>
+        <label><input type="radio" name="rad" value="20x20"> Płytki 20x20 cm</label><br>
+        <label><input type="radio" name="rad" value="25x12"> Płytki 25x15 cm</label><br>
+        <label><input type="button" name="btn" value="przelicz"></label><br>
+        <label>
+            <p id="out"></p>
+        </label>
+    </fieldset>
     <script>
-        function count() {
-            let area = document.getElementById("area").value;
-            let type = document.querySelector('input[name="type"]:checked').value;
-            let choice = area * type;
-            document.getElementById('out').innerHTML = "Koszt kafelkowania: " + choice + " zł";
-        }
+        const btn = document.querySelector("input[name='btn']");
+        const rad = document.querySelectorAll("input[name='rad']");
+        const output = document.querySelector("#out");
+
+        btn.addEventListener("click", function () {
+            let count = parseFloat(document.querySelector("input[name='numberA']").value);
+            for (let i = 0; i < rad.length; i++)
+                if (rad[i].checked) {
+                    const ch = rad[i].value;
+
+                    if (ch == "20x20") {
+                        output.textContent = `Koszt kafelkowania: ${count * 70}zł`;
+                    }
+                    else {
+                        output.textContent = `Koszt kafelkowania: ${count * 80}zł`;
+                    }
+                }
+
+        })
     </script>
 </body>
 
