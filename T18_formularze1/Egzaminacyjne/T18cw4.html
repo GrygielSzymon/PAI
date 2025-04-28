@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #field {
+            background-color: bisque;
+        }
+
+        input {
+            border: 0px;
+            margin: 5px;
+        }
+
+        #btn1 {
+            background-color: red;
+        }
+
+        #btn1:hover {
+            background-color: rgb(194, 0, 0);
+        }
+
+        #btn2 {
+            background-color: green;
+        }
+
+        #btn2:hover {
+            background-color: rgb(0, 53, 0);
+        }
+
+        #btn3 {
+            background-color: blue;
+        }
+
+        #btn3:hover {
+            background-color: rgb(0, 0, 175);
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset id="field">
+        <form method="get">
+            <label id="fielLabel">Podaj rozmiar tekstu w procentach: </label>
+            <label id="fielLabel"><input type="number" name="perc" value="100" style="height: 14px">%</label>
+            <br>
+            <select name="stl">
+                <option value="normal">prosty</option>
+                <option value="italic">pochylna</option>
+            </select>
+            <br>
+            <label>Jakim kolorem sformatować tekst? Wybierz przycisk</label>
+            <br>
+            <label> <input type="button" id="btn1"></label>
+            <label> <input type="button" id="btn2"></label>
+            <label> <input type="button" id="btn3"></label>
+            <p id="out">To jest przykład paragrafu, który może być dowolnie formatowany przez JavaScript</p>
+        </form>
+    </fieldset>
+
+    <script>
+        const percInput = document.querySelector("input[name='perc']");
+        const out = document.querySelector("#out");
+        const styleSelect = document.querySelector("select[name='stl']");
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const btn3 = document.querySelector("#btn3");
+
+        btn1.addEventListener("click", function () {
+            out.style.color = "red";
+            const perc = parseFloat(percInput.value);
+            out.style.fontSize = perc + '%';
+            out.style.fontStyle = styleSelect.value;
+        });
+
+        btn2.addEventListener("click", function () {
+            out.style.color = "green";
+            const perc = parseFloat(percInput.value);
+            out.style.fontSize = perc + '%';
+            out.style.fontStyle = styleSelect.value;
+        });
+
+        btn3.addEventListener("click", function () {
+            out.style.color = "blue";
+            const perc = parseFloat(percInput.value);
+            out.style.fontSize = perc + '%';
+            out.style.fontStyle = styleSelect.value;
+        });
+    </script>
+</body>
+
+</html>
