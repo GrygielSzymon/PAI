@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeLife</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">BikeLife</a></h1>
+            </div>
+            <nav>
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+                <ul id="nav-links">
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#aboutUs">O nas</a></li>
+                    <li><a href="#tutorials">Poradniki</a></li>
+                    <li><a href="#reviews">Recenzje</a></li>
+                    <li><a href="#shops">Sklepy</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="gallery">
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 8</div>
+                <img src="assets/andhika-soreng-US06QF_sxu8-unsplash.jpg" id="img">
+                <div class="text">Rowery do zjazdów</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 8</div>
+                <img src="assets/coen-van-de-broek-C4S0b9RfO0E-unsplash.jpg" id="img">
+                <div class="text">Rowery szosowe</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 8</div>
+                <img src="assets/dmitrii-vaccinium-ZipFYg_VLv4-unsplash.jpg" id="img">
+                <div class="text">Rower grawelowy</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 8</div>
+                <img src="assets/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" id="img">
+                <div class="text">Rowery szosowe</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 8</div>
+                <img src="assets/gotrax-qJYN_yONt_c-unsplash.jpg" id="img">
+                <div class="text">Rower miejski</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 8</div>
+                <img src="assets/andrei-castanha-eOsY4sO0bD8-unsplash.jpg" id="img">
+                <div class="text">Rower zjazdowy</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">7 / 8</div>
+                <img src="assets/clement-delhaye-NJQv0W6DHaM-unsplash.jpg" id="img">
+                <div class="text">Rowery zjazdowe</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">8 / 8</div>
+                <img src="assets/mark-northern-qvk8QFyGfWA-unsplash.jpg" id="img">
+                <div class="text">Rower zjazdowy</div>
+            </div>
+
+            <!-- Nawigacja -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="aboutUs">
+        <h2>O nas</h2>
+        <p>Jesteśmy ekipą zapalonych rowerzystów górskich, dla których MTB to coś więcej niż hobby – to styl życia.
+            BikeLife powstało z pasji do dwóch kółek, dzikich tras i adrenaliny płynącej z jazdy po korzeniach, skałach
+            i stromych zjazdach.<br>
+            Testujemy sprzęt, dzielimy się wiedzą i pokazujemy, że rower górski to nie tylko sport – to sposób na
+            wolność, rozwój i kontakt z naturą. Nieważne, czy dopiero zaczynasz, czy masz za sobą tysiące kilometrów – u
+            nas znajdziesz coś dla siebie: porady, inspiracje, trasy i sprzęt, który warto mieć.<br>
+            Dołącz do społeczności BikeLife i poczuj z nami flow na szlaku! 🌲🚵</p>
+    </section>
+
+
+    <section id="tutorials">
+        <h2>Poradniki</h2>
+        <div class="guides-grid">
+            <div class="guide-card">
+                <h3>Jak dobrać rower?</h3>
+                <p>Dowiedz się, jak dobrać rower do wzrostu, stylu jazdy i budżetu.</p>
+                <a href="https://www.youtube.com/watch?v=HKSPOg2tWRU">Kliknij, by poznać szczegóły.</a>
+            </div>
+            <div class="guide-card">
+                <h3>Konserwacja napędu</h3>
+                <p>Krok po kroku: jak czyścić i smarować łańcuch, zębatki i przerzutki.</p>
+                <a href="https://www.youtube.com/watch?v=VBlgablJFAY">Kliknij, by poznać szczegóły.</a>
+            </div>
+            <div class="guide-card">
+                <h3>Wyprawa rowerowa</h3>
+                <p>Jak się przygotować, by wyprawa rowerowa była udana i bezpieczna.</p>
+                <a href="https://www.youtube.com/watch?v=Qp3yvJ53t2I">Kliknij, by poznać szczegóły.</a>
+            </div>
+            <div class="guide-card">
+                <h3>Przygotowanie do sezonu</h3>
+                <p>Jak sprawdzić hamulce, ciśnienie i stan roweru po zimie.</p>
+                <a href="https://www.youtube.com/watch?v=SJrlyvkdbDM">Kliknij, by poznać szczegóły.</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="types">
+        <img id="mainImage" class="large-image" src="assets/mtb.jpg">
+        <p id="bikeName" class="bikeName">Rower MTB</p>
+        <p id="description" class="description">Rowery do jazdy w trudnym terenie</p>
+
+        <div class="thumbnails">
+            <div class="thumbnail" id="thumb1">
+                <img src="assets/mtb.jpg" alt="mtb bike">
+            </div>
+            <div class="thumbnail" id="thumb2">
+                <img src="assets/road.jpg" alt="road bike">
+            </div>
+            <div class="thumbnail" id="thumb3">
+                <img src="assets/gravel.jpg" alt="gravel bike">
+            </div>
+            <div class="thumbnail" id="thumb4">
+                <img src="assets/city.jpg" alt="city bike">
+            </div>
+            <div class="thumbnail" id="thumb5">
+                <img src="assets/velotric-e-bike-0026-67ace81554b22.jpg" alt="electric bike">
+            </div>
+            <div class="thumbnail" id="thumb6">
+                <img src="assets/wethepeople-envy-carbonic-20-i2.jpg" alt="bmx bike">
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Recenzje sprzętu</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <h3>Kask FOX Speedframe Pro</h3>
+                <p>Bezpieczny i dobrze wentylowany kask do enduro. Świetna jakość wykonania, dobra cena.</p>
+                <ul>
+                    <li>✅ Wygodny system dopasowania</li>
+                    <li>✅ Dobra wentylacja</li>
+                    <li>❌ Brak wersji z MIPS w niższej cenie</li>
+                </ul>
+                <p><strong>Ocena:</strong> ⭐⭐⭐⭐☆</p>
+            </div>
+            <div class="review-card">
+                <h3>Pedały Crankbrothers Stamp 7</h3>
+                <p>Lekkie, aluminiowe pedały platformowe – świetny wybór do rowerów zjazdowych.</p>
+                <ul>
+                    <li>✅ Doskonały grip</li>
+                    <li>✅ Wytrzymałość</li>
+                    <li>❌ Dość drogie</li>
+                </ul>
+                <p><strong>Ocena:</strong> ⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shops">
+        <h2>Polecane sklepy rowerowe</h2>
+        <div class="shops-list">
+            <div class="shop-item">
+                <h3><a href="https://rowerowy.com" target="_blank">Rowerowy.com</a></h3>
+                <p>Duży wybór rowerów i akcesoriów. Szybka wysyłka i dobre ceny.</p>
+            </div>
+            <div class="shop-item">
+                <h3><a href="https://www.bikeatelier.pl/" target="_blank">Bike Atelier</a></h3>
+                <p>Sklep stacjonarny i online – świetny serwis i części rowerowe.</p>
+            </div>
+            <div class="shop-item">
+                <h3><a href="https://www.dobrerowery.pl/" target="_blank">DobreRowery.pl</a></h3>
+                <p>Bogata oferta MTB i zjazdówek. Często mają fajne promocje.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <form>
+            <input type="text" placeholder="Imię" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Wiadomość" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+
+    <div class="accessibility-panel">
+        <div class="accessibility-toggle" title="Ustawienia dostępności">♿</div>
+        <div class="accessibility-menu">
+            <button onclick="adjustFontSize('increase')">Powiększ tekst</button>
+            <button onclick="adjustFontSize('decrease')">Zmniejsz tekst</button>
+            <button onclick="toggleGrayscale()">Skala szarości</button>
+            <button onclick="toggleHighContrast()">Wysoki kontrast</button>
+            <button onclick="toggleReadableFont()">Czytelna czcionka</button>
+            <button onclick="resetAccessibility()">Resetuj</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 BikeLife - Wszystkie prawa zastrzeżone</p>
+        <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
