@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Style w JavaScript</title>
+	<link rel="stylesheet" href="styl6.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="left">
+		<h1>Konfigurator stylów</h1>
+		<p>Podaj kolor tła</p>
+		<button type="button" id="indigo" onclick="color('Indigo')">Indigo</button>
+		<button type="button" id="steelblue" onclick="color('SteelBlue')">SteelBlue</button>
+		<button type="button" id="olive" onclick="color('Olive')">Olive</button>
+		<p>Podaj kolor czcionki</p>
+		<select id="colorC" onchange="fontColor();">
+			<option value="White">White</button>
+			<option value="Tan">Tan</option>
+			<option value="Bisque">Bisque</option>
+			<option value="Plum">Plum</option>
+		</select>
+		<p>Podaj rozmiar czcionki w procentaach, np. 200%</p>
+		<input type="number" id="size" value="100" onblur="fontSize()" />
+		<p>Czy rysunek ma mieć ramkę?</p>
+		<label>
+			<input type="checkbox" id="border" onchange="border()" checked />
+			Rysuj ramkę
+		</label>
+		<p>Jaki jest typ punktora listy?</p>
+		<label>
+			<input type="radio" name="point" onchange="point('disc')" checked />
+			dysk<br/>
+		</label>
+		<label>
+			<input type="radio" name="point" onchange="point('square')" />
+			kwadrat<br/>
+		</label>
+		<label>
+			<input type="radio" name="point" onchange="point('circle')" />
+			okrąg<br/>
+		</label>
+	</div>
+	<div id="right">
+		<img src="gibraltar.jpg" alt="Gibraltar" id="img" />
+		<ul id="list">
+			<li>element 1</li>
+			<li>element 2</li>
+			<li>element 3</li>
+		</ul>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+	</div>
+	<div id="footer">
+		Autor: Szymon Grygiel
+	</div>
+</body>
+</html>

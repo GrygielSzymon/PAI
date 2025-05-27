@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl7.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>Galeria miejsc ciekawych</h2>
+    </header>
+    <main>
+        <img src="lanzarotte.jpg" id="mainImg" alt="galeria">
+    </main>
+    <div>
+        <section id="left">
+            <h3>Przeglądaj zdjęcia</h3>
+            <div>
+                <img src="lanzarotte.jpg" onclick="changeIMG('lanzarotte.jpg')" id="imgs" alt="lanzarotte">
+                <img src="pekin.jpg" onclick="changeIMG('pekin.jpg')" id="imgs" alt="pekin">
+                <img src="serengeti.jpg" onclick="changeIMG('serengeti.jpg')" id="imgs" alt="serengeti">
+                <img src="wenecja.jpg" onclick="changeIMG('wenecja.jpg')" id="imgs" alt="wenecja">
+                <img src="tajlandia.jpg" onclick="changeIMG('tajlandia.jpg')" id="imgs" alt="tajlandia">
+            </div>
+        </section>
+        <section id="right">
+            <h3>Obrazy w naszej galerii</h3>
+            <table>
+                <tr>
+                    <td>Europa</td>
+                    <td>Azja</td>
+                    <td>Afryka</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <p>Polub nas <img id="icon" src="icon-off.png" onclick="iconBtn()"></p>
+            <a href="#" target="_blank">Odkryj więcej zdjęć</a>
+        </section>
+    </div>
+    <footer>
+        Autor: Szymon Grygiel
+    </footer>
+</body>
+
+</html>
